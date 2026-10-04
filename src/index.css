@@ -1,0 +1,239 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Playfair Display', 'Instrument Serif', Georgia, serif;
+
+    /* Exact Canvas & Surface Colors scraped from hanzo.framer.website */
+    --bg-page: #d9d9d9;
+    --bg-card: #ffffff;
+    --bg-glass: rgba(255, 255, 255, 0.5);
+    --text-primary: #000000;
+    --text-secondary: rgba(0, 0, 0, 0.6);
+    --text-muted: #666666;
+    --border-light: rgba(0, 0, 0, 0.08);
+    --border-lighter: rgba(0, 0, 0, 0.04);
+    
+    /* Exact Hanzo Accent Colors */
+    --accent-orange: #ff5e00;
+    --accent-green: #22c55e;
+  }
+
+  html.dark,
+  [data-theme="dark"] {
+    --bg-page: #0f1012;
+    --bg-card: #16171d;
+    --bg-glass: rgba(22, 23, 29, 0.6);
+    --text-primary: #ffffff;
+    --text-secondary: #9ea2ae;
+    --text-muted: #646875;
+    --border-light: rgba(255, 255, 255, 0.1);
+    --border-lighter: rgba(255, 255, 255, 0.05);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    overflow-x: clip;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  html {
+    overflow-x: clip;
+  }
+}
+
+.font-serif-italic {
+  font-family: 'Playfair Display', 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   SIGNATURE HANZO TRANSLUCENT WHITE HALO BORDERS (Scraped directly from https://hanzo.framer.website)
+   rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px
+   ========================================================================== */
+
+/* 1. Standard Solid Card Halo (Process Cards, Showcase Cards) */
+.halo-card {
+  box-shadow: 
+    0 0 0 8px rgba(255, 255, 255, 0.25),
+    0 16px 16px 0 rgba(0, 0, 0, 0.1);
+}
+html.dark .halo-card,
+[data-theme="dark"] .halo-card {
+  box-shadow: 
+    0 0 0 8px rgba(255, 255, 255, 0.08),
+    0 16px 20px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* 2. Glass Translucent Card Halo (Pricing Card, FAQ Contact Card) */
+.halo-card-glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 
+    0 0 0 8px rgba(255, 255, 255, 0.25),
+    0 16px 20px 0 rgba(0, 0, 0, 0.1);
+}
+html.dark .halo-card-glass,
+[data-theme="dark"] .halo-card-glass {
+  background: rgba(22, 23, 29, 0.65);
+  box-shadow: 
+    0 0 0 8px rgba(255, 255, 255, 0.08),
+    0 16px 20px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* 3. Primary CTA Button Halo (inset depth + translucent white outer ring) */
+.halo-btn {
+  box-shadow: 
+    0 0 0 8px rgba(255, 255, 255, 0.25),
+    0 24px 74px rgba(0, 0, 0, 0.18),
+    inset 0 -16px 48px 0 #000000;
+}
+html.dark .halo-btn,
+[data-theme="dark"] .halo-btn {
+  box-shadow: 
+    0 0 0 8px rgba(255, 255, 255, 0.12),
+    0 24px 74px rgba(0, 0, 0, 0.5),
+    inset 0 -16px 48px 0 #000000;
+}
+
+/* 4. Floating Chip Halo (Hello Section Pills) */
+.halo-chip {
+  box-shadow: 
+    0 0 0 8px rgba(255, 255, 255, 0.25),
+    0 12px 16px 0 rgba(0, 0, 0, 0.1);
+}
+html.dark .halo-chip,
+[data-theme="dark"] .halo-chip {
+  box-shadow: 
+    0 0 0 8px rgba(255, 255, 255, 0.08),
+    0 12px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* 5. Avatar Halo Ring */
+.halo-avatar {
+  box-shadow: 
+    0 0 0 6px rgba(255, 255, 255, 0.35),
+    0 8px 16px -2px rgba(0, 0, 0, 0.12);
+}
+html.dark .halo-avatar,
+[data-theme="dark"] .halo-avatar {
+  box-shadow: 
+    0 0 0 6px rgba(255, 255, 255, 0.12),
+    0 8px 16px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* 6. Heavy 3D Headline Badge Shadow */
+.badge-3d-shadow {
+  box-shadow: 
+    0 20px 36px -4px rgba(0, 0, 0, 0.38),
+    0 8px 16px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Volumetric Light Ray Animation */
+@keyframes ray-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: rotate(-35deg) scale(1) translateY(0);
+  }
+  50% {
+    opacity: 0.55;
+    transform: rotate(-33deg) scale(1.06) translateY(-15px);
+  }
+}
+
+.animate-ray {
+  animation: ray-pulse 8s ease-in-out infinite;
+}
+
+.wall-track {
+  display: flex;
+  width: max-content;
+  height: calc(50% - 6px);
+  min-height: 0;
+  gap: 14px;
+  will-change: transform;
+}
+
+.wall-tile {
+  position: relative;
+  display: block;
+  width: 46vw;
+  max-width: 680px;
+  min-width: 330px;
+  height: 100%;
+  overflow: hidden;
+  background: #18191d;
+}
+
+.wall-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92) brightness(1.08);
+  transition: filter 700ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wall-tile:hover img {
+  filter: saturate(1.05) brightness(1.1);
+  transform: scale(1.035);
+}
+
+.wall-tile-caption {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
+}
+
+@media (max-width: 767px) {
+  .wall-track {
+    gap: 10px;
+  }
+
+  .wall-tile {
+    width: 78vw;
+    min-width: 260px;
+  }
+}
+
+/* Glowing Pulsing Radar Dot */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.pulse-ring {
+  animation: radar-pulse 2s infinite cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
