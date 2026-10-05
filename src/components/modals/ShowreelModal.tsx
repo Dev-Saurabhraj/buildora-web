@@ -1,20 +1,20 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
-import work1 from '../../assets/work_detail_1.jpg';
-import work2 from '../../assets/work_detail_2.jpg';
-import work3 from '../../assets/work_detail_3.jpg';
-import work4 from '../../assets/work_detail_4.jpg';
-import work5 from '../../assets/work_detail_5.jpg';
-import work6 from '../../assets/work_detail_6.jpg';
-import work7 from '../../assets/work_detail_7.png';
-import work8 from '../../assets/work_detail_8.jpg';
-import work9 from '../../assets/work_detail_9.jpg';
-import work10 from '../../assets/work_detail_10.jpg';
-import work11 from '../../assets/work_detail_11.png';
-import work12 from '../../assets/work_detail_12.png';
-import testimonialWork1 from '../../assets/testimonial_1.jpg';
-import testimonialWork2 from '../../assets/testimonial_2.jpg';
+const work1 = '/assets/work_detail_1.jpg';
+const work2 = '/assets/work_detail_2.jpg';
+const work3 = '/assets/work_detail_3.jpg';
+const work4 = '/assets/work_detail_4.jpg';
+const work5 = '/assets/work_detail_5.jpg';
+const work6 = '/assets/work_detail_6.jpg';
+const work7 = '/assets/work_detail_7.png';
+const work8 = '/assets/work_detail_8.jpg';
+const work9 = '/assets/work_detail_9.jpg';
+const work10 = '/assets/work_detail_10.jpg';
+const work11 = '/assets/work_detail_11.png';
+const work12 = '/assets/work_detail_12.png';
+const testimonialWork1 = '/assets/testimonial_1.jpg';
+const testimonialWork2 = '/assets/testimonial_2.jpg';
 
 interface ShowreelModalProps {
   isOpen: boolean;

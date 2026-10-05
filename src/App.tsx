@@ -1,9 +1,10 @@
+'use client';
+
 import React, { useState } from 'react';
 import { ThreeBackground } from './components/3d/ThreeBackground';
 import { LightRay } from './components/3d/LightRay';
 import { Header } from './components/layout/Header';
 import { MenuDrawer } from './components/layout/MenuDrawer';
-import { Footer } from './components/layout/Footer';
 import { BookingModal } from './components/modals/BookingModal';
 import { ShowreelModal } from './components/modals/ShowreelModal';
 
@@ -18,17 +19,11 @@ import { PricingSection } from './components/sections/PricingSection';
 import { ValuePillarsSection } from './components/sections/ValuePillarsSection';
 import { FAQSection } from './components/sections/FAQSection';
 import { ConnectSection } from './components/sections/ConnectSection';
-import { ProjectDetailPage } from './pages/ProjectDetailPage';
 
 export const App: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [isShowreelOpen, setIsShowreelOpen] = useState(false);
-  const projectMatch = window.location.pathname.match(/^\/work\/([^/]+)\/?$/);
-
-  if (projectMatch) {
-    return <ProjectDetailPage slug={decodeURIComponent(projectMatch[1])} />;
-  }
 
   return (
     <div className="relative min-h-screen selection:bg-orange-500 selection:text-white">

@@ -4,6 +4,8 @@ import { ArrowRight } from 'lucide-react';
 interface CosmicButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
   variant?: 'primary' | 'secondary';
   className?: string;
   size?: 'sm' | 'md' | 'lg';
@@ -14,6 +16,8 @@ interface CosmicButtonProps {
 export const CosmicButton: React.FC<CosmicButtonProps> = ({
   children,
   onClick,
+  type = 'button',
+  disabled = false,
   variant = 'primary',
   className = '',
   size = 'md',
@@ -69,6 +73,8 @@ export const CosmicButton: React.FC<CosmicButtonProps> = ({
   return (
     <button
       ref={btnRef}
+      type={type}
+      disabled={disabled}
       onClick={handleClick}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
@@ -80,6 +86,7 @@ export const CosmicButton: React.FC<CosmicButtonProps> = ({
         group relative inline-flex items-center justify-center font-semibold tracking-tight
         rounded-full cursor-pointer transition-all duration-200 ease-out select-none
         active:scale-[0.96] hover:scale-[1.02]
+        disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100
         ${sizeClasses}
         ${withHalo ? 'halo-btn' : ''}
         ${

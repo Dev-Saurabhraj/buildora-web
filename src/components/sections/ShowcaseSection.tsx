@@ -1,15 +1,15 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown, Folder } from 'lucide-react';
-import stridaCatalogue from '../../assets/strida_catalogue.png';
-import stridaProject from '../../assets/strida_project.png';
-import stridaAbout from '../../assets/strida_about.png';
-import bravoScreen from '../../assets/work_detail_2.jpg';
-import nitroScreen from '../../assets/work_detail_3.jpg';
-import walletScreen from '../../assets/work_detail_5.jpg';
-import savingsScreen from '../../assets/work_detail_6.jpg';
-import cardBoardScreen from '../../assets/work_detail_9.jpg';
-import learningScreen from '../../assets/work_detail_10.jpg';
+const stridaCatalogue = '/assets/strida_catalogue.png';
+const stridaProject = '/assets/strida_project.png';
+const stridaAbout = '/assets/strida_about.png';
+const bravoScreen = '/assets/work_detail_2.jpg';
+const nitroScreen = '/assets/work_detail_3.jpg';
+const walletScreen = '/assets/work_detail_5.jpg';
+const savingsScreen = '/assets/work_detail_6.jpg';
+const cardBoardScreen = '/assets/work_detail_9.jpg';
+const learningScreen = '/assets/work_detail_10.jpg';
 
 interface ShowcaseSectionProps {
   onOpenShowreel: () => void;
