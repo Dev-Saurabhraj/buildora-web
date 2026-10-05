@@ -6,7 +6,7 @@ const steps = [
     number: '01',
     title: 'Subscribe',
     description: 'Choose a plan and start with a focused design queue built around your priorities.',
-    detail: 'A clear monthly partnership',
+    detail: 'A clear project scope',
   },
   {
     number: '02',

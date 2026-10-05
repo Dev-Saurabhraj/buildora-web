@@ -18,8 +18,8 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
     { num: '01', label: 'Recent Work', href: '/#showcase' },
     { num: '02', label: 'How it Works', href: '/#process' },
     { num: '03', label: 'Case Studies', href: '/#case-studies' },
-    { num: '04', label: 'About Joris', href: '/#about' },
-    { num: '05', label: 'Pricing & Plans', href: '/#pricing' },
+    { num: '04', label: 'About Buildora', href: '/#about' },
+    { num: '05', label: 'Services & Scope', href: '/#pricing' },
     { num: '06', label: 'FAQ', href: '/#faq' },
   ];
 
@@ -47,7 +47,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
             {/* Header */}
             <div className="flex items-center justify-between">
               <span className="font-extrabold text-lg text-[#111216] dark:text-white">
-                Hanzo Studio
+                Buildora Design
               </span>
               <button
                 onClick={onClose}
@@ -80,7 +80,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
             {/* Footer */}
             <div className="flex flex-col gap-4">
               <p className="text-xs text-[#5d6069] dark:text-[#9ea2ae]">
-                Ready to transform your startup design?
+                 Have a product, website, or identity to shape?
               </p>
               <CosmicButton
                 onClick={() => {
@@ -90,7 +90,7 @@ export const MenuDrawer: React.FC<MenuDrawerProps> = ({
                 size="md"
                 withHalo={true}
               >
-                Book Free Discovery Call
+                Discuss a Project
               </CosmicButton>
             </div>
           </motion.div>

@@ -1,49 +1,51 @@
-import { FAQItem, Experience } from '../types';
+import { FAQItem } from '../types';
 
 export const FAQS: FAQItem[] = [
   {
-    question: "What's the difference between a subscription and a custom project?",
-    answer: "With a subscription, you pay a flat monthly rate and can submit unlimited design requests with fast 48-hour turnarounds, pausing or canceling anytime. A custom project is ideal if you have a fixed scope, set deadline, and one-off budget.",
+    question: 'What kind of design projects can I hire Buildora for?',
+    answer: 'Product and UX design, websites and landing pages, visual identity, and design systems. Projects can start with a focused problem or cover a broader launch.',
   },
   {
-    question: "How fast is the turnaround?",
-    answer: "On average, most design requests are delivered within 48 hours (Monday through Friday). More complex requests such as comprehensive design systems or multi-screen flows are broken down into milestone deliverables.",
+    question: 'How does a freelance project get started?',
+    answer: 'We begin with a short conversation about your goals, users, timing, and what is already in progress. From there, I’ll outline a clear scope, milestones, and fee before design begins.',
   },
   {
-    question: "How many requests can I make?",
-    answer: "You can submit as many design requests to your queue as you like. They will be worked on one by one in priority order, ensuring each deliverable receives undivided attention and supreme craft.",
+    question: 'How is a project priced?',
+    answer: 'Pricing depends on the scope, timeline, and deliverables. You’ll receive a project estimate and milestones up front, with no subscription required.',
   },
   {
-    question: "What types of design do you handle?",
-    answer: "We specialize in Web & Mobile UI/UX, Design Systems, Pitch Decks, Landing Pages, Brand Identity, Framer Development, 3D Assets, and Micro-interactions for high-growth tech startups.",
+    question: 'What will I receive at the end?',
+    answer: 'Deliverables are agreed in the project scope and may include user flows, responsive interface designs, prototypes, visual assets, and organized Figma files for handoff.',
   },
   {
-    question: "What tools do you use?",
-    answer: "We work primarily in Figma, Framer, Spline, Three.js, Illustrator, and Loom. All native design source files are yours to keep.",
+    question: 'Can you work with my existing team?',
+    answer: 'Yes. I can collaborate with founders, product managers, and developers, sharing work in progress and preparing design files for implementation.',
   },
   {
-    question: "Can I pause the subscription?",
-    answer: "Yes, absolutely! We understand work fluctuates. If you only have 10 days of work this month, you can pause your cycle and save the remaining 20 days for whenever you need designs next.",
+    question: 'Do you also build the website or product?',
+    answer: 'Buildora focuses on design. The scope can include prototypes and implementation-ready handoff, and I’m happy to coordinate with your developer.',
   },
   {
-    question: "Do you offer development too?",
-    answer: "Yes, we build pixel-perfect, highly responsive Framer websites, Webflow experiences, and custom React/HTML/CSS applications with silky-smooth micro-animations.",
+    question: 'What if my idea is still taking shape?',
+    answer: 'That’s a good place to start. We can use discovery and lightweight prototypes to clarify the problem and test a direction before committing to a larger scope.',
   },
 ];
 
-export const EXPERIENCES: Experience[] = [
-  { role: 'Design Lead', company: 'Google', period: '2024 → Now' },
-  { role: 'Senior Designer', company: 'PayPal', period: '2019 → 2024' },
-  { role: 'Product Designer', company: 'Meta', period: '2016 → 2019' },
-  { role: 'Art Director', company: 'Independent', period: '2011 → 2016' },
-];
-
-export const PRICING_FEATURES = [
-  'Unlimited design requests',
-  'Fast turnaround (avg. 48 hours)',
-  'Fixed monthly rate, zero hidden fees',
-  'Pause or cancel anytime',
-  'One active request at a time',
-  'Native Figma source files included',
-  'Direct async communication via Slack & Loom',
-];
+export const PROJECT_DELIVERABLES = {
+  product: [
+    'Product discovery and UX direction',
+    'User flows and information architecture',
+    'Wireframes and interactive prototypes',
+    'Responsive interface design',
+    'Reusable components and UI systems',
+    'Organized Figma files and handoff',
+  ],
+  brand: [
+    'Brand direction and visual language',
+    'Website structure and page planning',
+    'Responsive website or landing-page design',
+    'Typography and color systems',
+    'Launch-ready visual assets',
+    'Organized Figma files and handoff',
+  ],
+};

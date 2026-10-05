@@ -59,26 +59,26 @@ export const ConnectSection: React.FC<ConnectSectionProps> = ({ onOpenBooking })
           style={{ y: contentY, opacity: contentOpacity }}
           className="relative z-10 w-full max-w-2xl mx-auto flex flex-col items-center text-center space-y-6 select-none my-auto"
         >
-          {/* Availability Badge: "2 spots available" with Flanking Hairlines */}
+          {/* Freelance project availability */}
           <div className="flex items-center justify-center gap-5">
             <span className="w-16 sm:w-20 h-[1px] bg-gradient-to-r from-transparent to-white/50" />
-            <span className="font-serif-italic text-sm sm:text-base text-white/60 tracking-wide">
-              2 spots available
+              <span className="font-serif-italic text-sm sm:text-base text-white/60 tracking-wide">
+              Freelance projects welcome
             </span>
             <span className="w-16 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-white/50" />
           </div>
 
-          {/* Headline: "Let's Connect" ("Let's" in pure white, "Connect" in 50% opacity white) */}
+          {/* Project inquiry headline */}
           <h2 className="text-5xl sm:text-7xl md:text-8xl font-normal tracking-[-0.04em] leading-[1.08] select-none">
             <span className="text-white font-medium">Let's </span>
-            <span className="text-white/50 font-normal">Connect</span>
+            <span className="text-white/50 font-normal">work together.</span>
           </h2>
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg md:text-xl text-white font-normal max-w-xl mx-auto leading-relaxed">
-            Feel free to contact me if having any questions.
+            Have a product, website, or brand that needs a clearer direction?
             <br className="hidden sm:block" />
-            I'm available for new projects or just for chatting.
+            Share what you’re building and we can shape a thoughtful next step.
           </p>
 
           {/* Action Button: Pill with Inset Depth, Halo, and Arrow */}
@@ -87,7 +87,7 @@ export const ConnectSection: React.FC<ConnectSectionProps> = ({ onOpenBooking })
               onClick={onOpenBooking}
               className="group relative inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-black text-white text-base font-normal rounded-full halo-btn hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer shadow-2xl border border-white/15"
             >
-              <span>Book a free intro call</span>
+              <span>Start a project conversation</span>
               <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-200" />
             </button>
           </div>
@@ -95,15 +95,19 @@ export const ConnectSection: React.FC<ConnectSectionProps> = ({ onOpenBooking })
 
         {/* 5. Bottom Footer Row (Integrated directly inside the dark card) */}
         <div className="relative z-10 w-full mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-white/50">
-          <p className="font-normal tracking-tight">&copy; Hanzo Studio, 2026</p>
+          <p className="font-normal tracking-tight">&copy; Buildora Design, 2026</p>
           <div className="flex flex-wrap items-center justify-center gap-2.5">
-            {['Twitter / X', 'LinkedIn', 'Instagram', 'Framer'].map((platform) => (
+            {[
+              { label: 'Selected work', href: '/#case-studies' },
+              { label: 'Services', href: '/#pricing' },
+              { label: 'FAQ', href: '/#faq' },
+            ].map((link) => (
               <a
-                key={platform}
-                href="#"
+                key={link.label}
+                href={link.href}
                 className="px-4 py-1.5 rounded-full border border-white/20 text-white/70 hover:text-white hover:border-white/50 hover:bg-white/5 transition-all text-xs font-normal"
               >
-                {platform}
+                {link.label}
               </a>
             ))}
           </div>

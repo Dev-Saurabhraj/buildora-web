@@ -6,7 +6,7 @@
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-serif: 'Playfair Display', 'Instrument Serif', Georgia, serif;
 
-    /* Exact Canvas & Surface Colors scraped from hanzo.framer.website */
+    /* Buildora canvas and surface colors */
     --bg-page: #d9d9d9;
     --bg-card: #ffffff;
     --bg-glass: rgba(255, 255, 255, 0.5);
@@ -16,7 +16,7 @@
     --border-light: rgba(0, 0, 0, 0.08);
     --border-lighter: rgba(0, 0, 0, 0.04);
     
-    /* Exact Hanzo Accent Colors */
+    /* Buildora accent colors */
     --accent-orange: #ff5e00;
     --accent-green: #22c55e;
   }
@@ -52,11 +52,11 @@
 }
 
 /* ==========================================================================
-   SIGNATURE HANZO TRANSLUCENT WHITE HALO BORDERS (Scraped directly from https://hanzo.framer.website)
+  Translucent halo borders used by Buildora surfaces
    rgba(255, 255, 255, 0.25) 0px 0px 0px 8px, rgba(0, 0, 0, 0.1) 12px 16px 16px 0px
    ========================================================================== */
 
-/* 1. Standard Solid Card Halo (Process Cards, Showcase Cards) */
+/* 1. Standard solid card halo */
 .halo-card {
   box-shadow: 
     0 0 0 8px rgba(255, 255, 255, 0.25),
@@ -69,7 +69,7 @@ html.dark .halo-card,
     0 16px 20px 0 rgba(0, 0, 0, 0.45);
 }
 
-/* 2. Glass Translucent Card Halo (Pricing Card, FAQ Contact Card) */
+/* 2. Glass translucent card halo */
 .halo-card-glass {
   background: var(--bg-glass);
   backdrop-filter: blur(14px);
@@ -86,7 +86,7 @@ html.dark .halo-card-glass,
     0 16px 20px 0 rgba(0, 0, 0, 0.45);
 }
 
-/* 3. Primary CTA Button Halo (inset depth + translucent white outer ring) */
+/* 3. Primary CTA button halo */
 .halo-btn {
   box-shadow: 
     0 0 0 8px rgba(255, 255, 255, 0.25),
@@ -101,7 +101,7 @@ html.dark .halo-btn,
     inset 0 -16px 48px 0 #000000;
 }
 
-/* 4. Floating Chip Halo (Hello Section Pills) */
+/* 4. Floating chip halo */
 .halo-chip {
   box-shadow: 
     0 0 0 8px rgba(255, 255, 255, 0.25),
@@ -114,7 +114,7 @@ html.dark .halo-chip,
     0 12px 16px 0 rgba(0, 0, 0, 0.4);
 }
 
-/* 5. Avatar Halo Ring */
+/* 5. Avatar halo ring */
 .halo-avatar {
   box-shadow: 
     0 0 0 6px rgba(255, 255, 255, 0.35),
@@ -127,7 +127,7 @@ html.dark .halo-avatar,
     0 8px 16px -2px rgba(0, 0, 0, 0.4);
 }
 
-/* 6. Heavy 3D Headline Badge Shadow */
+/* 6. Headline badge shadow */
 .badge-3d-shadow {
   box-shadow: 
     0 20px 36px -4px rgba(0, 0, 0, 0.38),

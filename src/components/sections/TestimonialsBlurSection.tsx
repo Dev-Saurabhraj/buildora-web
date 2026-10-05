@@ -1,135 +1,76 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import sophiePortrait from '../../assets/case_bravo.png';
-import milanPortrait from '../../assets/case_taro.png';
 
-// Word-by-word blur+fade reveal — exactly like Framer's native reveal
-const BlurRevealText: React.FC<{ text: string; delayBase?: number }> = ({
-  text,
-  delayBase = 0,
-}) => {
-  const words = text.split(' ');
-  return (
-    <motion.p
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-60px' }}
-      // Inter Display, 24px, weight 400, line-height 1.6, letter-spacing -0.02em
-      className="text-[22px] md:text-[26px] font-normal leading-[1.55] tracking-[-0.02em] text-[#000000] dark:text-white"
-    >
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          variants={{
-            hidden: { opacity: 0, filter: 'blur(10px)', y: 5 },
-            visible: {
-              opacity: 1,
-              filter: 'blur(0px)',
-              y: 0,
-            },
-          }}
-          transition={{
-            duration: 0.42,
-            delay: delayBase + i * 0.03,
-            ease: [0.16, 1, 0.3, 1],
-          }}
-          className="inline-block mr-[0.28em]"
-        >
-          {word}
-        </motion.span>
-      ))}
-    </motion.p>
-  );
-};
-
-export const TestimonialsBlurSection: React.FC = () => {
-  return (
-    // No card container — raw on the page background, exactly like Framer
-    <section className="relative my-36 w-full">
-      {/* Large opening " decoration, centered above */}
-      <motion.div
-        initial={{ opacity: 0, y: -16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.5 }}
-        className="text-center mb-12"
+const BlurRevealText: React.FC<{ text: string; delayBase?: number }> = ({ text, delayBase = 0 }) => (
+  <motion.p
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: '-60px' }}
+    className="text-[22px] font-normal leading-[1.55] text-[#111216] dark:text-white md:text-[26px]"
+  >
+    {text.split(' ').map((word, index) => (
+      <motion.span
+        key={`${word}-${index}`}
+        variants={{
+          hidden: { opacity: 0.22, filter: 'blur(9px)', y: 5 },
+          visible: { opacity: 1, filter: 'blur(0px)', y: 0 },
+        }}
+        transition={{ duration: 0.42, delay: delayBase + index * 0.025, ease: [0.16, 1, 0.3, 1] }}
+        className="mr-[0.28em] inline-block"
       >
-        <span className="font-serif text-[80px] leading-none text-black/12 dark:text-white/15 select-none">
-          &ldquo;
-        </span>
-      </motion.div>
+        {word}
+      </motion.span>
+    ))}
+  </motion.p>
+);
 
-      {/* Two-column layout with vertical divider */}
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] gap-0">
-        {/* ── LEFT TESTIMONIAL ─────────────────────────────────── */}
-        <div className="flex flex-col justify-between gap-10 pr-0 md:pr-14">
+export const TestimonialsBlurSection: React.FC = () => (
+  <section className="relative my-36 w-full" aria-labelledby="collaboration-title">
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="mb-4 flex items-center justify-center gap-4"
+    >
+      <span className="h-px w-14 bg-black/10 dark:bg-white/10" />
+      <span className="font-serif-italic text-xl text-black/45 dark:text-white/45">Working together</span>
+      <span className="h-px w-14 bg-black/10 dark:bg-white/10" />
+    </motion.div>
+
+    <motion.h2
+      id="collaboration-title"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="mb-14 text-center text-4xl font-semibold tracking-tight text-[#111216] dark:text-white md:mb-16 md:text-5xl"
+    >
+      Clear thinking. Considered craft.
+    </motion.h2>
+
+    <div className="grid grid-cols-1 gap-12 md:grid-cols-[1fr_1px_1fr] md:gap-0">
+      <article className="flex flex-col justify-between gap-8 pr-0 md:pr-12">
+        <div>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-orange-600 dark:text-orange-400">01 / Find the focus</p>
           <BlurRevealText
-            text="Working with Joris was a game-changer. He instantly understood our vision and translated it into a sleek, intuitive product. The process felt effortless, and the results exceeded our expectations."
-            delayBase={0.05}
+            text="We start by understanding the people, goals, and constraints behind your project. Then we agree on a clear direction before the detailed design begins."
+            delayBase={0.04}
           />
-
-          {/* Author */}
-          <motion.div
-            initial={{ opacity: 0, x: -16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.5, delay: 0.45 }}
-            className="flex items-center gap-4"
-          >
-            <img
-              src={sophiePortrait}
-              alt="Sophie Lemaire"
-              className="w-[64px] h-[64px] rounded-full object-cover flex-shrink-0"
-              style={{ boxShadow: '0 0 0 3px rgba(255,255,255,0.6), 0 4px 12px rgba(0,0,0,0.12)' }}
-              loading="lazy"
-            />
-            <div>
-              <p className="text-[16px] font-medium text-[#000000] dark:text-white leading-tight">
-                Sophie Lemaire
-              </p>
-              <p className="text-[14px] text-[#666666] dark:text-[#9ea2ae] mt-0.5">
-                Product Lead at Loomi
-              </p>
-            </div>
-          </motion.div>
         </div>
+        <p className="text-sm text-[#777b84] dark:text-white/55">Discovery · Product strategy · UX flows</p>
+      </article>
 
-        {/* ── Vertical Divider ──────────────────────────────────── */}
-        <div className="hidden md:block w-[1px] bg-black/10 dark:bg-white/10 mx-0" />
+      <div className="hidden w-px bg-black/10 dark:bg-white/10 md:block" />
 
-        {/* ── RIGHT TESTIMONIAL ─────────────────────────────────── */}
-        <div className="flex flex-col justify-between gap-10 pl-0 md:pl-14 mt-16 md:mt-0 border-t md:border-t-0 border-black/10 dark:border-white/10 pt-10 md:pt-0">
+      <article className="flex flex-col justify-between gap-8 border-t border-black/10 pt-10 dark:border-white/10 md:border-0 md:pl-12 md:pt-0">
+        <div>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-orange-600 dark:text-orange-400">02 / Make it real</p>
           <BlurRevealText
-            text="Joris brings clarity to chaos. His design work is not only beautiful but deeply strategic. He helped us rebrand from the ground up, and our audience response has been incredible."
-            delayBase={0.2}
+            text="Together we shape the interface, visual system, and useful details that make the experience feel cohesive. You get regular reviews and a considered handoff."
+            delayBase={0.12}
           />
-
-          {/* Author */}
-          <motion.div
-            initial={{ opacity: 0, x: 16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex items-center gap-4"
-          >
-            <img
-              src={milanPortrait}
-              alt="Milan Bakker"
-              className="w-[64px] h-[64px] rounded-full object-cover flex-shrink-0"
-              style={{ boxShadow: '0 0 0 3px rgba(255,255,255,0.6), 0 4px 12px rgba(0,0,0,0.12)' }}
-              loading="lazy"
-            />
-            <div>
-              <p className="text-[16px] font-medium text-[#000000] dark:text-white leading-tight">
-                Milan Bakker
-              </p>
-              <p className="text-[14px] text-[#666666] dark:text-[#9ea2ae] mt-0.5">
-                Founder of Drifted Studio
-              </p>
-            </div>
-          </motion.div>
         </div>
-      </div>
-    </section>
-  );
-};
+        <p className="text-sm text-[#777b84] dark:text-white/55">UI design · Prototyping · Developer handoff</p>
+      </article>
+    </div>
+  </section>
+);

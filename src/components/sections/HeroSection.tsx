@@ -10,7 +10,7 @@ import leaderHaze from '../../assets/case_haze.png';
 import leaderTaro from '../../assets/case_taro.png';
 import leaderFargo from '../../assets/case_fargo.png';
 
-const trustedLeaderImages = [leaderStrida, leaderBravo, leaderNitro, leaderHaze, leaderTaro, leaderFargo];
+const featuredProjectImages = [leaderStrida, leaderBravo, leaderNitro, leaderHaze, leaderTaro, leaderFargo];
 
 interface HeroSectionProps {
   onOpenBooking: () => void;
@@ -28,7 +28,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
       >
         <span className="w-2 h-2 rounded-full bg-[#22c55e] pulse-ring" />
         <span className="text-xs md:text-sm font-semibold tracking-tight text-[#111216] dark:text-white">
-          Booking Open &mdash; 2 Spots Left
+          Freelance projects welcome
         </span>
       </motion.div>
 
@@ -40,7 +40,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
         className="text-5xl sm:text-6xl md:text-7xl font-medium tracking-[-0.04em] leading-[1.08] text-[#111216] dark:text-white max-w-5xl mb-6"
       >
         <span className="inline-flex flex-wrap items-center justify-center gap-x-2 md:gap-x-4 gap-y-2">
-          <span>Unlimited</span>
+          <span>Thoughtful</span>
           {/* Authentic 3D Card Badge matching Image 1 */}
           <HeadlineCardBadge />
           <span className="text-black/35 dark:text-white/35 font-semibold">Design</span>
@@ -50,7 +50,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
           <span className="text-black/35 dark:text-white/35 font-semibold">for</span>
           {/* Authentic 3D Titanium Infinity Badge matching Image 1 */}
           <HeadlineInfinityBadge />
-          <span>Solid Startups</span>
+          <span>Growing Teams</span>
         </span>
       </motion.h1>
 
@@ -61,7 +61,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
         transition={{ delay: 0.15, duration: 0.5 }}
         className="text-lg md:text-xl text-[#5d6069] dark:text-[#9ea2ae] max-w-xl mx-auto leading-relaxed mb-10"
       >
-        We help startups and brands create beautiful, functional products &mdash; fast and hassle-free.
+        Independent product, web, and brand design for teams ready to turn a good idea into a clear, useful experience.
       </motion.p>
 
       {/* Hero CTA & Social Proof Avatar Stack */}
@@ -72,24 +72,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenBooking }) => {
         className="flex flex-wrap items-center justify-center gap-8"
       >
         <CosmicButton onClick={onOpenBooking} size="lg" withHalo={true}>
-          Choose your plan
+          Discuss a project
         </CosmicButton>
 
-        <div className="flex flex-col items-start gap-1 select-none">
+        <a href="/#case-studies" className="flex flex-col items-start gap-1 select-none" aria-label="Explore selected projects">
           <div className="flex items-center -space-x-2">
-            {trustedLeaderImages.map((image, index) => (
+            {featuredProjectImages.map((image, index) => (
               <img
                 key={image}
                 src={image}
-                alt={`Trusted creative leader ${index + 1}`}
+                alt=""
                 className="w-10 h-10 rounded-full object-cover halo-avatar hover:scale-110 hover:z-10 transition-transform"
               />
             ))}
           </div>
           <span className="text-xs font-semibold text-[#8e929d]">
-            Trusted by Leaders
+            Explore selected work
           </span>
-        </div>
+        </a>
       </motion.div>
     </section>
   );

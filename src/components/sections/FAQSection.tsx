@@ -26,31 +26,23 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenBooking }) => {
       <div className="grid grid-cols-1 md:grid-cols-[380px_1fr] gap-16 items-start">
         {/* Left Sticky Contact Card (Exact Match to Framer live site with glass halo) */}
         <div className="rounded-[24px] p-8 md:p-10 halo-card-glass border border-white/20 dark:border-white/10 md:sticky md:top-28 space-y-6 flex flex-col">
-          {/* Avatar with circular halo ring matching Image 2 */}
-          <div className="w-16 h-16 rounded-full overflow-hidden halo-avatar mb-2">
-            <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=faces"
-              alt="Joris van Dijk"
-              className="w-full h-full object-cover"
-            />
+          <div className="grid size-14 place-items-center rounded-full bg-[#111216] text-xl font-bold text-white halo-avatar dark:bg-white dark:text-black">
+            B
           </div>
 
           <h3 className="text-xl md:text-2xl font-bold text-[#111216] dark:text-white leading-snug">
-            Have more questions?<br />Book a free discovery call
+            Have a project in mind?<br />Let’s find a clear starting point.
           </h3>
 
           {/* Button with thick frosted halo matching Image 2 */}
           <div className="pt-2">
             <CosmicButton onClick={onOpenBooking} size="md" withHalo={true} className="w-full">
-              Book a Discovery Call
+              Discuss a Project
             </CosmicButton>
           </div>
 
           <p className="text-xs text-[#8e929d] pt-1">
-            Or, email me at{' '}
-            <a href="mailto:joris@hanzo.com" className="text-[#ff5e00] font-semibold underline hover:opacity-80">
-              joris@hanzo.com
-            </a>
+            Share your goals, timeline, and what you already have in place.
           </p>
         </div>
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import founderAvatar from '../../assets/avatar_founder.png';
+import { ArrowUpRight } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   const experiences = [
-    { code: '01', role: 'Design Lead', company: 'Google', period: '2024 → Now', current: true },
-    { code: '02', role: 'Senior Designer', company: 'PayPal', period: '2019 → 2024', current: false },
-    { code: '03', role: 'Product Designer', company: 'Meta', period: '2016 → 2019', current: false },
-    { code: '04', role: 'Art Director', company: 'Independent', period: '2011 → 2016', current: false },
+    { code: '01', role: 'Product & UX', company: 'Web apps · Digital products', period: 'Plan → prototype', current: true },
+    { code: '02', role: 'Web design', company: 'Responsive sites · Landing pages', period: 'Structure → UI', current: false },
+    { code: '03', role: 'Brand systems', company: 'Identity · Visual direction', period: 'Concept → assets', current: false },
+    { code: '04', role: 'Design handoff', company: 'Figma · Developer collaboration', period: 'Polish → delivery', current: false },
   ];
 
   return (
@@ -21,7 +21,7 @@ export const AboutSection: React.FC = () => {
         className="flex items-center justify-center gap-4 mb-4"
       >
         <span className="w-16 h-[1px] bg-black/10 dark:bg-white/10" />
-        <span className="font-serif-italic text-2xl text-black/50 dark:text-white/50">Pushing Boundaries</span>
+        <span className="font-serif-italic text-2xl text-black/50 dark:text-white/50">The practice</span>
         <span className="w-16 h-[1px] bg-black/10 dark:bg-white/10" />
       </motion.div>
 
@@ -32,11 +32,11 @@ export const AboutSection: React.FC = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         className="text-4xl md:text-5xl font-bold tracking-tight text-center text-[#111216] dark:text-white mb-20"
       >
-        Pushing boundaries <span className="text-[#8e929d] font-normal">since 2011</span>
+        Independent design, from idea to handoff.
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-[380px_1fr] gap-12 items-start">
-        {/* Left: Founder Photo Card with signature frosted halo */}
+        {/* Left: Buildora identity */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -45,60 +45,22 @@ export const AboutSection: React.FC = () => {
           whileHover={{ y: -6, scale: 1.01 }}
           className="bg-white dark:bg-[#15161c] border border-black/8 dark:border-white/10 rounded-[32px] overflow-hidden halo-card"
         >
-          <div className="h-80 overflow-hidden relative">
-            <img
-              src={founderAvatar}
-              alt="Joris van Dijk"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+          <div className="relative flex h-80 flex-col justify-between overflow-hidden bg-[#111216] p-7 text-white">
+            <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
+            <span className="relative text-xs font-medium uppercase tracking-[0.16em] text-white/55">Independent by design</span>
+            <span className="relative text-6xl font-semibold tracking-tight">Buildora<span className="text-orange-500">.</span></span>
+            <span className="relative max-w-[220px] text-sm leading-relaxed text-white/65">Clear ideas. Useful digital experiences. Thoughtful handoff.</span>
           </div>
           <div className="p-6">
-            <h3 className="text-xl font-bold text-[#111216] dark:text-white">Joris van Dijk</h3>
-            <p className="text-xs text-[#8e929d] mb-4">Hanzo Studio, Founder</p>
-            <div className="flex gap-3">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener"
-                className="w-9 h-9 rounded-full border border-black/8 dark:border-white/10 flex items-center justify-center text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-black/5 transition-colors halo-chip"
-                aria-label="Instagram"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener"
-                className="w-9 h-9 rounded-full border border-black/8 dark:border-white/10 flex items-center justify-center text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-black/5 transition-colors halo-chip"
-                aria-label="LinkedIn"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle>
-                </svg>
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener"
-                className="w-9 h-9 rounded-full border border-black/8 dark:border-white/10 flex items-center justify-center text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-black/5 transition-colors halo-chip"
-                aria-label="Twitter / X"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-            </div>
+            <h3 className="text-xl font-bold text-[#111216] dark:text-white">Buildora</h3>
+            <p className="text-xs text-[#8e929d] mb-4">Independent freelance design</p>
+            <a href="/#contact" className="inline-flex items-center gap-2 text-sm font-medium text-[#111216] transition hover:text-orange-600 dark:text-white dark:hover:text-orange-400">
+              Start a project <ArrowUpRight className="size-4" />
+            </a>
           </div>
         </motion.div>
 
-        {/* Right: Bio & Documentary-Style Plain Timeline (No box design as requested) */}
+        {/* Right: Bio and freelance services */}
         <div className="flex flex-col gap-10">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -107,10 +69,10 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="text-xl md:text-2xl text-[#111216] dark:text-white leading-relaxed font-normal"
           >
-            Joris van Dijk is a Dutch designer known for his minimalist, expressive digital work. He helps startups and studios create clean interfaces and strong branding. Based in Utrecht, he blends function with emotion &mdash; and often crafts timeless digital experiences that scale.
+            Buildora is an independent freelance design practice for founders and small teams. I turn complex ideas into useful, cohesive experiences across product UX, web design, and visual identity, from the first conversation through a considered handoff.
           </motion.p>
 
-          {/* Documentary Plane: Clean minimalist timeline with cinematic scroll reveals */}
+          {/* Freelance services and deliverables */}
           <div className="border-t border-black/10 dark:border-white/10">
             {experiences.map((exp, i) => (
               <motion.div

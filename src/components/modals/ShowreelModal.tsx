@@ -23,7 +23,7 @@ interface ShowreelModalProps {
 
 export const ShowreelModal: React.FC<ShowreelModalProps> = ({ isOpen, onClose }) => {
   const works = [
-    { title: 'Astrid Müller', category: 'Portfolio · Art direction', img: work1 },
+    { title: 'Portfolio system', category: 'Portfolio · Art direction', img: work1 },
     { title: 'Bravo', category: 'Product · Web', img: work2 },
     { title: 'Nitro', category: 'Digital · Mobile', img: work3 },
     { title: 'Fargo', category: 'SaaS · Web app', img: work4 },
@@ -31,9 +31,9 @@ export const ShowreelModal: React.FC<ShowreelModalProps> = ({ isOpen, onClose })
     { title: 'Wallet', category: 'Product · Interface', img: work6 },
     { title: 'Hobby Point', category: 'Mobile · Community', img: work7 },
     { title: 'Saver', category: 'Finance · Dashboard', img: work8 },
-    { title: 'Studio Novo', category: 'Brand · Website', img: work9 },
-    { title: 'Loomi', category: 'Product · Interface', img: work10 },
-    { title: 'Drifted', category: 'Brand · Art direction', img: work11 },
+    { title: 'Brand website', category: 'Brand · Website', img: work9 },
+    { title: 'Learning platform', category: 'Product · Interface', img: work10 },
+    { title: 'Visual identity', category: 'Brand · Art direction', img: work11 },
     { title: 'Journey', category: 'Product · Web', img: work12 },
     { title: 'Playground', category: 'Mobile · Exploration', img: testimonialWork1 },
     { title: 'Longboarding', category: 'Mobile · Community', img: testimonialWork2 },

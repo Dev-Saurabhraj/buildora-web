@@ -6,10 +6,10 @@ export const Footer: React.FC = () => {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-10">
         <div>
           <span className="font-extrabold text-xl tracking-tight text-[#111216] dark:text-white block mb-1">
-            Hanzo
+            Buildora
           </span>
           <p className="text-xs text-[#8e929d]">
-            Unlimited Design for Solid Startups.
+            Freelance product, web, and brand design.
           </p>
         </div>
 
@@ -24,13 +24,10 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 border-t border-black/4 dark:border-white/5 text-xs text-[#8e929d]">
-        <p>&copy; 2026 Hanzo Studio. All rights reserved.</p>
-        <div className="flex gap-6">
-          <a href="https://twitter.com" target="_blank" rel="noopener" className="hover:text-black dark:hover:text-white transition-colors">Twitter / X</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener" className="hover:text-black dark:hover:text-white transition-colors">LinkedIn</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener" className="hover:text-black dark:hover:text-white transition-colors">Instagram</a>
-          <a href="https://framer.com" target="_blank" rel="noopener" className="hover:text-black dark:hover:text-white transition-colors">Framer</a>
-        </div>
+        <p>&copy; 2026 Buildora Design. All rights reserved.</p>
+        <a href="/#contact" className="font-medium text-[#5d6069] transition-colors hover:text-black dark:text-[#9ea2ae] dark:hover:text-white">
+          Start a project with Buildora
+        </a>
       </div>
     </footer>
   );

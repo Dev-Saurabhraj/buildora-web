@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// ── Exact Hanzo Framer chip colors from live DOM inspection ──────────────────
+// Service chips use the same Buildora accent palette as the page.
 interface ChipItem {
   id: string;
   label: string;
@@ -111,8 +111,8 @@ const rightChips: ChipItem[] = [
 ];
 
 const statementWords = [
-  'We', 'help', 'startups', 'and', 'enterprise', 'to', 'establish', 'an',
-  'emotional', 'connection', 'between', 'their', 'products', 'and', 'happy', 'engaged', 'customers.',
+  'Buildora', 'partners', 'with', 'founders', 'and', 'small', 'teams', 'to',
+  'turn', 'complex', 'ideas', 'into', 'clear,', 'useful', 'digital', 'experiences.',
 ];
 
 // Chip component — isolated so drag state doesn't mess with parent variants
@@ -194,7 +194,7 @@ export const StatementSection: React.FC = () => {
           className="max-w-2xl px-4 text-center text-2xl font-normal leading-[1.42] tracking-[-0.02em] text-[#111216] select-none sm:text-3xl md:text-[34px] lg:text-[38px] dark:text-white"
         >
           {statementWords.map((word, index) => {
-            const isEmphasis = word === 'emotional' || word === 'connection';
+            const isEmphasis = word === 'clear,' || word === 'useful';
             return (
               <motion.span
                 key={`${word}-${index}`}

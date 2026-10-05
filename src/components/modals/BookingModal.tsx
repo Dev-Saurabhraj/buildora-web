@@ -15,10 +15,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
   const [formData, setFormData] = useState({ name: '', email: '', company: '', notes: '' });
 
   const slots = [
-    'Tomorrow • 10:00 AM CET',
-    'Tomorrow • 02:30 PM CET',
-    'Thursday • 11:00 AM CET',
-    'Thursday • 04:00 PM CET',
+    'Product & UX',
+    'Website / landing page',
+    'Brand identity',
+    'Something else',
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -69,13 +69,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
             {!isSuccess ? (
               <div>
                 <span className="text-xs font-bold text-orange-600 uppercase tracking-wider block mb-1">
-                  Direct with Joris van Dijk
+                  Buildora · Freelance design
                 </span>
                 <h3 className="text-2xl font-extrabold text-[#111216] dark:text-white mb-2">
-                  Book a 20-min Discovery Call
+                  Tell me about your project
                 </h3>
                 <p className="text-xs text-[#5d6069] dark:text-[#9ea2ae] mb-6">
-                  Pick a date, discuss your design needs, and see if Hanzo is the right fit.
+                  Share a few details about what you’re building. We can use them to shape a practical scope and next step.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -105,19 +105,18 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-xs font-semibold text-[#111216] dark:text-white">Company Name</label>
+                      <label className="text-xs font-semibold text-[#111216] dark:text-white">Company or project</label>
                     <input
                       type="text"
-                      required
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      placeholder="NextGen Systems"
+                      placeholder="e.g. Mobile app redesign"
                       className="w-full px-3.5 py-2.5 bg-gray-50 dark:bg-[#1c1d24] border border-black/8 dark:border-white/10 rounded-xl text-sm text-[#111216] dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-[#111216] dark:text-white">Select Preferred Time Slot</label>
+                    <label className="text-xs font-semibold text-[#111216] dark:text-white">What kind of support do you need?</label>
                     <div className="grid grid-cols-2 gap-2">
                       {slots.map((slot, idx) => (
                         <button
@@ -142,14 +141,14 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                       rows={2}
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      placeholder="Looking to revamp our web app and launch next month..."
+                      placeholder="What are you trying to improve, clarify, or launch?"
                       className="w-full px-3.5 py-2 bg-gray-50 dark:bg-[#1c1d24] border border-black/8 dark:border-white/10 rounded-xl text-sm text-[#111216] dark:text-white focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white resize-none"
                     />
                   </div>
 
                   <div className="pt-2">
                     <CosmicButton size="md" withHalo={true} className="w-full">
-                      Confirm Discovery Call
+                      Send Project Enquiry
                     </CosmicButton>
                   </div>
                 </form>
@@ -160,10 +159,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   <Check className="w-8 h-8 stroke-[3]" />
                 </div>
                 <h4 className="text-2xl font-bold text-[#111216] dark:text-white">
-                  Call Confirmed!
+                  Thanks for sharing your project.
                 </h4>
                 <p className="text-xs text-[#5d6069] dark:text-[#9ea2ae] max-w-xs mx-auto leading-relaxed">
-                  Calendar invitation sent to your email. Looking forward to speaking with you!
+                  The next step is to agree on a clear scope, timeline, and deliverables.
                 </p>
                 <div className="pt-2">
                   <CosmicButton onClick={handleClose} size="sm" withHalo={true}>

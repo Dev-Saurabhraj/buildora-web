@@ -9,7 +9,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDrawer }) => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem('hanzo-theme');
+    const saved = localStorage.getItem('buildora-theme');
     if (saved === 'dark') {
       setIsDark(true);
       document.documentElement.classList.add('dark');
@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDrawer }) => {
       document.documentElement.classList.remove('dark');
       document.documentElement.setAttribute('data-theme', 'light');
     }
-    localStorage.setItem('hanzo-theme', nextDark ? 'dark' : 'light');
+    localStorage.setItem('buildora-theme', nextDark ? 'dark' : 'light');
     window.dispatchEvent(new CustomEvent('themechange', { detail: { isDark: nextDark } }));
     if ((window as any).updateThreeTheme) (window as any).updateThreeTheme(nextDark);
   };
@@ -47,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenDrawer }) => {
           className="pointer-events-auto inline-flex items-center px-6 py-2.5 bg-white/90 dark:bg-[#16171d]/90 backdrop-blur-xl border border-black/8 dark:border-white/10 rounded-full halo-chip hover:scale-105 transition-transform duration-200"
         >
           <span className="font-extrabold text-base tracking-tight text-[#111216] dark:text-white">
-            Hanzo
+            Buildora
           </span>
         </a>
 

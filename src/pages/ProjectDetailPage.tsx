@@ -6,7 +6,7 @@ import { Header } from '../components/layout/Header';
 import { MenuDrawer } from '../components/layout/MenuDrawer';
 import { Footer } from '../components/layout/Footer';
 import { BookingModal } from '../components/modals/BookingModal';
-import astridScreen from '../assets/work_detail_1.jpg';
+import portfolioScreen from '../assets/work_detail_1.jpg';
 import stridaCatalogue from '../assets/strida_catalogue.png';
 import stridaProject from '../assets/strida_project.png';
 import stridaAbout from '../assets/strida_about.png';
@@ -17,8 +17,8 @@ import walletScreen from '../assets/work_detail_5.jpg';
 import conciergeScreen from '../assets/work_detail_6.jpg';
 import hobbyPointScreen from '../assets/work_detail_8.jpg';
 import studioScreen from '../assets/work_detail_9.jpg';
-import loomiScreen from '../assets/work_detail_10.jpg';
-import driftedScreen from '../assets/work_detail_11.png';
+import learningScreen from '../assets/work_detail_10.jpg';
+import identityScreen from '../assets/work_detail_11.png';
 import journeyScreen from '../assets/work_detail_12.png';
 
 interface Project {
@@ -69,7 +69,7 @@ const projects: Record<string, Project> = {
     approach: 'Colorful editorial imagery, simple progress cues, and short guided lessons make exploration feel approachable.',
     outcome: 'A mobile product concept with a distinct visual voice and a clear path from browsing to first-time participation.',
     cover: nitroScreen,
-    gallery: [hobbyPointScreen, journeyScreen, loomiScreen],
+    gallery: [hobbyPointScreen, journeyScreen, learningScreen],
   },
   fargo: {
     name: 'Fargo',
@@ -81,7 +81,7 @@ const projects: Record<string, Project> = {
     approach: 'A modular dashboard, clear status language, and consistent interaction patterns turn complexity into a readable workflow.',
     outcome: 'A scalable interface system that helps teams move between overview, detail, and action with less friction.',
     cover: fargoScreen,
-    gallery: [loomiScreen, driftedScreen, astridScreen],
+    gallery: [learningScreen, identityScreen, portfolioScreen],
   },
 };
 

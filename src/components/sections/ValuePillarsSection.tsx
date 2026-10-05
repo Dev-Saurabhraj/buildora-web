@@ -18,18 +18,18 @@ interface Pillar {
 }
 
 const leftPillars: Pillar[] = [
-  { icon: <Smartphone className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Senior-level quality' },
-  { icon: <TrendingUp className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Developer-friendly' },
-  { icon: <Lightbulb className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'On-brand, every time' },
-  { icon: <Sparkles className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Fast execution' },
-  { icon: <ScanFace className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Smooth handoff' },
+  { icon: <Smartphone className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Product UX & UI' },
+  { icon: <TrendingUp className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Responsive web design' },
+  { icon: <Lightbulb className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Visual identity' },
+  { icon: <Sparkles className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Prototypes & interaction' },
+  { icon: <ScanFace className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Developer handoff' },
 ];
 
 const rightPillars: Pillar[] = [
-  { icon: <Monitor className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Systems thinking' },
-  { icon: <PieChart className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Clear process' },
-  { icon: <Settings className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Reliable partner' },
-  { icon: <Box className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Thoughtful feedback' },
+  { icon: <Monitor className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Websites & landing pages' },
+  { icon: <PieChart className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Design systems' },
+  { icon: <Settings className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Direct collaboration' },
+  { icon: <Box className="w-5 h-5 text-black/60 dark:text-white/60" />, label: 'Scoped project delivery' },
 ];
 
 export const ValuePillarsSection: React.FC = () => {

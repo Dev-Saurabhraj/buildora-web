@@ -35,7 +35,7 @@ export const App: React.FC = () => {
       {/* 1. Ambient WebGL Three.js Caustic Background */}
       <ThreeBackground />
 
-      {/* 2. Top-Left Volumetric Light Ray Animation */}
+      {/* 2. Soft upper-left light rays */}
       <LightRay />
 
       {/* 3. Subtle Film Grain Texture */}
@@ -76,10 +76,10 @@ export const App: React.FC = () => {
         {/* 4 Case Studies with 3D Tablet Hardware Frames */}
         <CaseStudiesSection />
 
-        {/* Founder Bio & Experience Timeline */}
+        {/* Buildora practice and service capabilities */}
         <AboutSection />
 
-        {/* Interactive Pricing (Monthly vs Custom) with Halo Card */}
+        {/* Freelance project scopes and deliverables */}
         <PricingSection onOpenBooking={() => setIsBookingOpen(true)} />
 
         {/* 9 Value Pillars with Stroke Icons & Divider Rules */}
@@ -88,7 +88,7 @@ export const App: React.FC = () => {
         {/* FAQ with Spring Accordion & Thick Frosted Halo Contact Card matching Image 2 */}
         <FAQSection onOpenBooking={() => setIsBookingOpen(true)} />
 
-        {/* Obsidian "Let's Connect" CTA & Integrated Footer */}
+        {/* Project enquiry and integrated footer */}
         <ConnectSection onOpenBooking={() => setIsBookingOpen(true)} />
       </main>
 
