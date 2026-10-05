@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import stridaImage from '../../assets/strida_catalogue.png';
-import bravoImage from '../../assets/work_detail_2.jpg';
-import nitroImage from '../../assets/work_detail_3.jpg';
-import fargoImage from '../../assets/work_detail_4.jpg';
+const stridaImage = '/assets/strida_catalogue.png';
+const bravoImage = '/assets/work_detail_2.jpg';
+const nitroImage = '/assets/work_detail_3.jpg';
+const fargoImage = '/assets/work_detail_4.jpg';
 
 const projects = [
   { name: 'Strida', category: 'Portfolio · Web', image: stridaImage, href: '/work/strida' },

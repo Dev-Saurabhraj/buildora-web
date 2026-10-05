@@ -12,6 +12,8 @@ interface BookingModalProps {
 export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
   const [selectedSlot, setSelectedSlot] = useState(0);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [formData, setFormData] = useState({ name: '', email: '', company: '', notes: '' });
 
   const slots = [
@@ -21,22 +23,50 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
     'Something else',
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSuccess(true);
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    setSubmitError('');
+
     try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          service: slots[selectedSlot],
+        }),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Your enquiry could not be sent. Please try again.');
+      }
+
+      setIsSuccess(true);
       confetti({
         particleCount: 120,
         spread: 70,
         origin: { y: 0.6 },
       });
-    } catch (_) {}
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Your enquiry could not be sent. Please try again.',
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
     onClose();
     setTimeout(() => {
       setIsSuccess(false);
+      setSubmitError('');
       setFormData({ name: '', email: '', company: '', notes: '' });
     }, 300);
   };
@@ -84,7 +114,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                       <label className="text-xs font-semibold text-[#111216] dark:text-white">Your Name</label>
                       <input
                         type="text"
+                        name="name"
                         required
+                        maxLength={100}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Alex Morgan"
@@ -95,7 +127,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                       <label className="text-xs font-semibold text-[#111216] dark:text-white">Email Address</label>
                       <input
                         type="email"
+                        name="email"
                         required
+                        maxLength={254}
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="alex@startup.io"
@@ -108,6 +142,8 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                       <label className="text-xs font-semibold text-[#111216] dark:text-white">Company or project</label>
                     <input
                       type="text"
+                      name="company"
+                      maxLength={160}
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       placeholder="e.g. Mobile app redesign"
@@ -138,7 +174,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   <div className="space-y-1">
                     <label className="text-xs font-semibold text-[#111216] dark:text-white">Project Goals (Optional)</label>
                     <textarea
+                      name="notes"
                       rows={2}
+                      maxLength={3000}
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                       placeholder="What are you trying to improve, clarify, or launch?"
@@ -147,8 +185,19 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   </div>
 
                   <div className="pt-2">
-                    <CosmicButton size="md" withHalo={true} className="w-full">
-                      Send Project Enquiry
+                    {submitError && (
+                      <p role="alert" className="mb-3 text-sm text-red-600 dark:text-red-400">
+                        {submitError}
+                      </p>
+                    )}
+                    <CosmicButton
+                      type="submit"
+                      disabled={isSubmitting}
+                      size="md"
+                      withHalo={true}
+                      className="w-full"
+                    >
+                      {isSubmitting ? 'Sending…' : 'Send Project Enquiry'}
                     </CosmicButton>
                   </div>
                 </form>

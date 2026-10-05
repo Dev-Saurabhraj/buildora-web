@@ -1,25 +1,27 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
-import { ThreeBackground } from '../components/3d/ThreeBackground';
-import { Header } from '../components/layout/Header';
-import { MenuDrawer } from '../components/layout/MenuDrawer';
-import { Footer } from '../components/layout/Footer';
-import { BookingModal } from '../components/modals/BookingModal';
-import portfolioScreen from '../assets/work_detail_1.jpg';
-import stridaCatalogue from '../assets/strida_catalogue.png';
-import stridaProject from '../assets/strida_project.png';
-import stridaAbout from '../assets/strida_about.png';
-import bravoScreen from '../assets/work_detail_2.jpg';
-import nitroScreen from '../assets/work_detail_3.jpg';
-import fargoScreen from '../assets/work_detail_4.jpg';
-import walletScreen from '../assets/work_detail_5.jpg';
-import conciergeScreen from '../assets/work_detail_6.jpg';
-import hobbyPointScreen from '../assets/work_detail_8.jpg';
-import studioScreen from '../assets/work_detail_9.jpg';
-import learningScreen from '../assets/work_detail_10.jpg';
-import identityScreen from '../assets/work_detail_11.png';
-import journeyScreen from '../assets/work_detail_12.png';
+import { ThreeBackground } from '../3d/ThreeBackground';
+import { Header } from '../layout/Header';
+import { MenuDrawer } from '../layout/MenuDrawer';
+import { Footer } from '../layout/Footer';
+import { BookingModal } from '../modals/BookingModal';
+const portfolioScreen = '/assets/work_detail_1.jpg';
+const stridaCatalogue = '/assets/strida_catalogue.png';
+const stridaProject = '/assets/strida_project.png';
+const stridaAbout = '/assets/strida_about.png';
+const bravoScreen = '/assets/work_detail_2.jpg';
+const nitroScreen = '/assets/work_detail_3.jpg';
+const fargoScreen = '/assets/work_detail_4.jpg';
+const walletScreen = '/assets/work_detail_5.jpg';
+const conciergeScreen = '/assets/work_detail_6.jpg';
+const hobbyPointScreen = '/assets/work_detail_8.jpg';
+const studioScreen = '/assets/work_detail_9.jpg';
+const learningScreen = '/assets/work_detail_10.jpg';
+const identityScreen = '/assets/work_detail_11.png';
+const journeyScreen = '/assets/work_detail_12.png';
 
 interface Project {
   name: string;

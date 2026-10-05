@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { HeadlineCardBadge } from '../3d/HeadlineCardBadge';
 import { HeadlineInfinityBadge } from '../3d/HeadlineInfinityBadge';
 import { CosmicButton } from '../common/CosmicButton';
-import leaderStrida from '../../assets/case_strida.png';
-import leaderBravo from '../../assets/case_bravo.png';
-import leaderNitro from '../../assets/case_nitro.png';
-import leaderHaze from '../../assets/case_haze.png';
-import leaderTaro from '../../assets/case_taro.png';
-import leaderFargo from '../../assets/case_fargo.png';
+const leaderStrida = '/assets/case_strida.png';
+const leaderBravo = '/assets/case_bravo.png';
+const leaderNitro = '/assets/case_nitro.png';
+const leaderHaze = '/assets/case_haze.png';
+const leaderTaro = '/assets/case_taro.png';
+const leaderFargo = '/assets/case_fargo.png';
 
 const featuredProjectImages = [leaderStrida, leaderBravo, leaderNitro, leaderHaze, leaderTaro, leaderFargo];
 
